@@ -130,6 +130,27 @@ This script is stored in:
 - Computes distance distributions and diffusion properties.
 - **Why C?** Lightweight, fast, and perfectly suited for simple random walk mechanics and efficient memory control.
 
+ ## 📚 Physical Background
+ 
+ The freely-jointed chain models a polymer as ( $$N$$ ) rigid segments of length ( $$b$$ ), randomly oriented in 3D. The end-to-end vector is:
+
+$$
+\vec{Q} = \sum_{i=1}^{N} \vec{b}_i
+$$
+
+And its mean squared length is:
+
+$$
+\langle Q^2 \rangle = N b^2
+$$
+
+Applications:
+- Conformational statistics of polymers
+- Entropic elasticity
+- Monte Carlo sampling in statistical physics
+
+The simulation verifies this relation numerically and compares it to the theoretical prediction.
+
 - ## Features
 
 - Random generation of 3D segment vectors within a sphere of radius `b`
@@ -174,24 +195,33 @@ This script is stored in:
 
   ## 📚 Physical Background
 
-  The freely-jointed chain models a polymer as ( $$N$$ ) rigid segments of length ( $$b$$ ), randomly oriented in 3D. The end-to-end vector is:
+Brownian motion describes the **random trajectory of particles suspended in a fluid**, resulting from collisions with the molecules of the surrounding medium. This random walk can be modeled in discrete time and space as a **stochastic process**.
 
-$$
-\vec{Q} = \sum_{i=1}^{N} \vec{b}_i
-$$
+In the 2D lattice version implemented here, a particle moves randomly at each time step to one of its four nearest neighbors (up, down, left, right) with equal probability.
 
-And its mean squared length is:
+Let $(X_t, Y_t)$ denote the particle’s position at time $t$. The **mean squared displacement (MSD)** over a lag $\tau$ is defined as:
 
-$$
-\langle Q^2 \rangle = N b^2
-$$
 
-Applications:
-- Conformational statistics of polymers
-- Entropic elasticity
-- Monte Carlo sampling in statistical physics
+$$\text{MSD}(\tau) = \left\langle \left[ X_{t+\tau} - X_t \right]^2 + \left[ Y_{t+\tau} - Y_t \right]^2 \right\rangle$$
 
-The simulation verifies this relation numerically and compares it to the theoretical prediction.
+
+For a standard random walk in $d$ dimensions, the MSD grows linearly with $\tau$:
+
+
+$$\text{MSD}(\tau) = 2 d D \tau$$
+
+
+where:
+- $d$ is the number of dimensions ($d = 2$ here),
+- $D$ is the **diffusion coefficient**.
+
+From the slope $s$ of the linear regression of MSD vs $\tau$, we estimate:
+
+
+$$D = \frac{s}{2d}$$
+
+
+This allows us to **quantify the diffusive behavior** of the system. If the motion is purely random (Markovian), the MSD should be linear. Constraints (like disallowing repeated directions) introduce memory into the walk and **deviate from standard Brownian behavior**, offering insights into **non-Markovian dynamics**.
 
 
 ## Main steps
