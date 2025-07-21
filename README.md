@@ -34,6 +34,10 @@ This repository contains several physics simulations implemented in **MATLAB, Py
    - Final 2D spin configuration
    - Theoretical M(T) curve
    - 3D spin arrow visualization
+  
+### 🧊 ising_clusters.cpp
+
+A low-temperature simulation of the 2D Ising model, highlighting spontaneous cluster formation of aligned spins. The Metropolis algorithm is used to evolve the spin configuration over time. The magnetization is recorded and exported. This version is ready to be extended for graphical visualization (e.g., with SFML or matplotlib-cpp).
 
 ---
 
