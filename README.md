@@ -23,6 +23,44 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 - Theoretical magnetization curve
 - 2D and 3D visualizations of the spin configuration
 
+  ## 📚 Physical Background
+
+  The Ising model describes a lattice of spins \( S_i = \pm 1 \), interacting only with their nearest neighbors. The Hamiltonian is given by:
+
+\[
+\mathcal{H} = -J \sum_{\langle i,j \rangle} S_i S_j
+\]
+
+The system evolves using the **Metropolis algorithm**, where a spin flip is accepted with probability:
+
+\[
+P = 
+\begin{cases}
+1 & \text{if } \Delta E \leq 0 \\
+e^{-\Delta E / k_B T} & \text{otherwise}
+\end{cases}
+\]
+
+Key quantities:
+
+- Magnetization:
+  \[
+  M = \frac{1}{N} \sum_i S_i
+  \]
+- Magnetic susceptibility:
+  \[
+  \chi = \frac{\langle M^2 \rangle - \langle M \rangle^2}{k_B T}
+  \]
+
+Theoretical magnetization below the Curie temperature \( T_c \):
+
+\[
+M(T) = \left[1 - \sinh^{-4}\left( \frac{2J}{k_B T} \right) \right]^{1/8}, \quad \text{for } T < T_c
+\]
+
+Where \( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 \).
+
+
 ## Steps of the simulation
 
 1. **Lattice creation**: A (2N + 1)² grid with periodic boundary conditions
@@ -62,7 +100,17 @@ $$
 M(T) = \left[1 - \sinh^{-4}(2J/k_BT) \right]^{1/8} \quad \text{for } T < T_c
 $$
 
-Where \( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 \)
+### Mathematical Definitions
+
+...
+
+- Theoretical magnetization \( M(T) \) (Onsager's solution):
+
+  $$
+  M(T) = \left[1 - \frac{1}{\sinh^4\left(\frac{2J}{k_B T}\right)}\right]^{\frac{1}{8}}, \quad \text{for } T < T_c
+  $$
+
+Where \( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 \) is the theoretical Curie temperature for the 2D Ising model (Onsager's solution).
 
 📁 Output folder: `snapshots/`
 📈 Plots:
@@ -124,6 +172,28 @@ This script is stored in:
 - Final plot of displacement distribution from the origin
 - Clean 2D visualization of motion patterns
 
+  ## 📚 Physical Background
+
+  The freely-jointed chain models a polymer as \( N \) rigid segments of length \( b \), randomly oriented in 3D. The end-to-end vector is:
+
+\[
+\vec{Q} = \sum_{i=1}^{N} \vec{b}_i
+\]
+
+And its mean squared length is:
+
+\[
+\langle Q^2 \rangle = N b^2
+\]
+
+Applications:
+- Conformational statistics of polymers
+- Entropic elasticity
+- Monte Carlo sampling in statistical physics
+
+The simulation verifies this relation numerically and compares it to the theoretical prediction.
+
+
 ## Main steps
 
 1. Initialize all walkers at the origin (0, 0)
@@ -167,6 +237,24 @@ This script simulates a 2D Brownian motion with a constraint: the walker cannot 
 - Computation of the Mean Squared Displacement (MSD) for increasing lag τ
 - Linear fit on MSD for small τ to estimate the diffusion coefficient
 
+  ## 📚 Physical Background
+
+  Here, the random walker **cannot repeat the same direction in two consecutive steps**. This introduces **temporal correlations** and breaks the Markov property.
+
+MSD is computed as a function of lag \( \tau \):
+
+\[
+\text{MSD}(\tau) = \frac{1}{T - \tau} \sum_{t=1}^{T - \tau} \left[ (X_{t+\tau} - X_t)^2 + (Y_{t+\tau} - Y_t)^2 \right]
+\]
+
+From the linear region of MSD(τ), the diffusion coefficient is estimated as:
+
+\[
+D = \frac{\text{slope}}{2d}
+\]
+
+with \( d = 2 \) the dimensionality of the system.
+
 ### Mathematical Definitions
 
 - Let \((X_t^i, Y_t^i)\) be the position of walker \(i\) at time \(t\)
@@ -196,6 +284,26 @@ This script is stored in:
 - Extracts equilibrium distance and energy profile over surface sites.
 - **Why C++?** Best suited for multi-layered numerical computation with structured data and optimization loops. Relevant to R&D and molecular modeling.
 
+  ## 📚 Physical Background
+
+  This script evaluates the interaction between an atom and a graphene surface using the Lennard-Jones potential:
+
+\[
+V(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]
+\]
+
+The script:
+- Constructs a graphene-like lattice
+- Evaluates \( V(z) \) above adsorption sites (Top, Bridge, Hollow)
+- Computes and plots the cohesive energy profile
+
+This method is widely used in:
+- Molecular dynamics
+- Surface science
+- Adsorption studies
+
+  
+
 - ## Outputs
 - `graphene.xyz`: 3D lattice for visualization
 - `V_z_profiles.csv`: Energy vs Z for each site
@@ -223,6 +331,12 @@ These projects reflect practical skills in:
 ➡️ Highly relevant to:
 - **Quantitative finance** (Monte Carlo pricing, Brownian-based models)
 - **Aerospace & materials R&D** (atomistic modeling, diffusion, simulation)
+
+## 🎯 Relevance to Quantitative Finance and Aerospace R&D
+
+The simulations in this repository—ranging from Ising models and constrained Brownian motion to cohesive energy calculations—demonstrate the application of core methods in **statistical physics**, **stochastic processes**, and **numerical modeling**. These techniques are directly transferable to **quantitative finance**, where Monte Carlo methods, Brownian motion, and diffusion equations underpin option pricing, risk modeling, and market dynamics analysis. In parallel, the **cohesion energy simulation** and **polymer chain modeling** reflect key competencies required in **aerospace R&D**, especially in areas like material science, molecular dynamics, and instrument calibration in microgravity environments.
+
+By developing these codes during my undergraduate studies in physics, I’ve laid a solid foundation for future work as a **quantitative researcher** or **space R&D engineer**, with the ability to adapt scientific computing skills across both high-tech and financial sectors.
 
 ---
 
