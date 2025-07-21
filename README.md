@@ -44,13 +44,13 @@ $$
 Key quantities:
 
 - Magnetization:
-  $$
-  M = \frac{1}{N} \sum_i S_i
-  $$
+  
+  $$M = \frac{1}{N} \sum_i S_i$$
+  
 - Magnetic susceptibility:
-  $$
-  \chi = \frac{\langle M^2 \rangle - \langle M \rangle^2}{k_B T}
-  $$
+  
+  $$\chi = \frac{\langle M^2 \rangle - \langle M \rangle^2}{k_B T}$$
+  
 
 Theoretical magnetization below the Curie temperature $$( T_c )$$:
 
