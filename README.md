@@ -111,6 +111,15 @@ Applicable in:
 - Extracts equilibrium distance and energy profile over surface sites.
 - **Why C++?** Best suited for multi-layered numerical computation with structured data and optimization loops. Relevant to R&D and molecular modeling.
 
+- ## Outputs
+- `graphene.xyz`: 3D lattice for visualization
+- `V_z_profiles.csv`: Energy vs Z for each site
+
+## Methods
+- Lattice generation with two atoms per cell
+- Lennard-Jones potential with 12-6 parameters
+- Z-scan above selected adsorption sites
+
 ---
 
 ## 🛠️ Why this matters
