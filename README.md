@@ -49,6 +49,38 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 - Calculates probability distributions and mean square displacement over time.
 - **Why MATLAB?** Excellent for matrix operations and scientific visualization; ideal for clear plots and quick prototyping.
 
+- ## Key features
+
+- Uniform random walk in 4 directions (up, down, left, right)
+- Real-time animated trajectories of several walkers
+- Final plot of displacement distribution from the origin
+- Clean 2D visualization of motion patterns
+
+## Main steps
+
+1. Initialize all walkers at the origin (0, 0)
+2. At each time step, move randomly in one of 4 directions
+3. Track and plot the positions of `N_S` walkers in real time
+4. Compute final distance from the origin and display histogram
+
+## Output
+
+- **Live 2D trajectories** of selected walkers
+- **Final trajectories** with colored markers
+- **Histogram** of end-to-end distances after `T` steps
+
+## Relevance
+
+This project illustrates:
+- Brownian motion in discrete space
+- Core concepts in statistical physics and diffusion
+- Skills in real-time plotting and vectorized simulation
+
+Applicable in:
+- Statistical modeling
+- Quantitative finance (random walk hypotheses)
+- Physics education and numerical methods
+  
 ---
 
 ### 4. 🧱 Cohesive Energy – **Crystal Structure & Potentials** (C++)
