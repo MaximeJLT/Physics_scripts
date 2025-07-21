@@ -25,40 +25,40 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 
   ## 📚 Physical Background
 
-  The Ising model describes a lattice of spins \( S_i = \pm 1 \), interacting only with their nearest neighbors. The Hamiltonian is given by:
+  The Ising model describes a lattice of spins ( $$S_i = \pm 1 $$), interacting only with their nearest neighbors. The Hamiltonian is given by:
 
-\[
+$$
 \mathcal{H} = -J \sum_{\langle i,j \rangle} S_i S_j
-\]
+$$
 
 The system evolves using the **Metropolis algorithm**, where a spin flip is accepted with probability:
 
-\[
+$$
 P = 
 \begin{cases}
 1 & \text{if } \Delta E \leq 0 \\
 e^{-\Delta E / k_B T} & \text{otherwise}
 \end{cases}
-\]
+$$
 
 Key quantities:
 
 - Magnetization:
-  \[
+  $$
   M = \frac{1}{N} \sum_i S_i
-  \]
+  $$
 - Magnetic susceptibility:
-  \[
+  $$
   \chi = \frac{\langle M^2 \rangle - \langle M \rangle^2}{k_B T}
-  \]
+  $$
 
-Theoretical magnetization below the Curie temperature \( T_c \):
+Theoretical magnetization below the Curie temperature $$( T_c )$$:
 
-\[
+$$
 M(T) = \left[1 - \sinh^{-4}\left( \frac{2J}{k_B T} \right) \right]^{1/8}, \quad \text{for } T < T_c
-\]
+$$
 
-Where \( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 \).
+Where $$( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 )$$.
 
 
 ## Steps of the simulation
@@ -110,7 +110,7 @@ $$
   M(T) = \left[1 - \frac{1}{\sinh^4\left(\frac{2J}{k_B T}\right)}\right]^{\frac{1}{8}}, \quad \text{for } T < T_c
   $$
 
-Where \( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 \) is the theoretical Curie temperature for the 2D Ising model (Onsager's solution).
+Where $$( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 )$$ is the theoretical Curie temperature for the 2D Ising model (Onsager's solution).
 
 📁 Output folder: `snapshots/`
 📈 Plots:
@@ -174,17 +174,17 @@ This script is stored in:
 
   ## 📚 Physical Background
 
-  The freely-jointed chain models a polymer as \( N \) rigid segments of length \( b \), randomly oriented in 3D. The end-to-end vector is:
+  The freely-jointed chain models a polymer as $$( N )$$ rigid segments of length $$( b )$$, randomly oriented in 3D. The end-to-end vector is:
 
-\[
+$$
 \vec{Q} = \sum_{i=1}^{N} \vec{b}_i
-\]
+$$
 
 And its mean squared length is:
 
-\[
+$$
 \langle Q^2 \rangle = N b^2
-\]
+$$
 
 Applications:
 - Conformational statistics of polymers
@@ -241,23 +241,23 @@ This script simulates a 2D Brownian motion with a constraint: the walker cannot 
 
   Here, the random walker **cannot repeat the same direction in two consecutive steps**. This introduces **temporal correlations** and breaks the Markov property.
 
-MSD is computed as a function of lag \( \tau \):
+MSD is computed as a function of lag $$( \tau )$$:
 
-\[
+$$
 \text{MSD}(\tau) = \frac{1}{T - \tau} \sum_{t=1}^{T - \tau} \left[ (X_{t+\tau} - X_t)^2 + (Y_{t+\tau} - Y_t)^2 \right]
-\]
+$$
 
 From the linear region of MSD(τ), the diffusion coefficient is estimated as:
 
-\[
+$$
 D = \frac{\text{slope}}{2d}
-\]
+$$
 
-with \( d = 2 \) the dimensionality of the system.
+with $$( d = 2 )$$ the dimensionality of the system.
 
 ### Mathematical Definitions
 
-- Let \((X_t^i, Y_t^i)\) be the position of walker \(i\) at time \(t\)
+- Let $$((X_t^i, Y_t^i))$$ be the position of walker $$(i)$$ at time $$(t)$$
 - For a given walker, the MSD at lag \(\tau\) is computed as:
 
   $$
@@ -270,7 +270,7 @@ with \( d = 2 \) the dimensionality of the system.
   D = \frac{\text{slope}}{2d}
   $$
 
-  where \(d = 2\) is the dimension of the motion.
+  where $$(d = 2)$$ is the dimension of the motion.
 
 ### File location
 
@@ -288,13 +288,13 @@ This script is stored in:
 
   This script evaluates the interaction between an atom and a graphene surface using the Lennard-Jones potential:
 
-\[
+$$
 V(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]
-\]
+$$
 
 The script:
 - Constructs a graphene-like lattice
-- Evaluates \( V(z) \) above adsorption sites (Top, Bridge, Hollow)
+- Evaluates $$( V(z) )$$ above adsorption sites (Top, Bridge, Hollow)
 - Computes and plots the cohesive energy profile
 
 This method is widely used in:
