@@ -6,6 +6,12 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 
 ## 🔬 Simulations included
 
+## 📚 Table of Contents
+- [1. Monte Carlo Simulation – 2D Ising Model (Python)](#1--monte-carlo-simulation--2d-ising-model-python)
+- [2. Freely-Jointed Chain – Polymer Simulation (C)](#2--freely-jointed-chain--polymer-simulation-c)
+- [3. Brownian Motion in 2D (MATLAB)](#3--brownian-motion-in-2d-matlab)
+- [4. Cohesive Energy – Crystal Potentials (C++)](#4--cohesive-energy--crystal-structure--potentials-c)
+
 ### 1. 🧲 Monte Carlo Simulation – **2D Ising Model** (Python)
 - Simulates ferromagnetic behavior on a 2D lattice using the Metropolis algorithm.
 - Visualizes magnetization and critical behavior across temperatures.
@@ -43,6 +49,20 @@ This script is stored in:
 ### ❄️ clusters.py
 
 A 2D Ising model simulation at low temperature (`kBT = 1`) using the Metropolis algorithm. Spins are initialized randomly, and clusters emerge over time as the system minimizes energy. Snapshots are saved every 10,000 iterations to visualize cluster formation. Also includes theoretical magnetization comparison vs. temperature.
+
+### Physical background
+
+In the low-temperature regime (k_BT < T_c), spins tend to align, forming large clusters.
+We simulate this using:
+- Random spin flips accepted via the Metropolis criterion
+- Periodic boundary conditions
+- Magnetization M(t) and theoretical magnetization M(T) based on Onsager’s solution:
+
+$$
+M(T) = \left[1 - \sinh^{-4}(2J/k_BT) \right]^{1/8} \quad \text{for } T < T_c
+$$
+
+Where \( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 \)
 
 📁 Output folder: `snapshots/`
 📈 Plots:
