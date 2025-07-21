@@ -58,7 +58,7 @@ $$
 M(T) = \left[1 - \sinh^{-4}\left( \frac{2J}{k_B T} \right) \right]^{1/8}, \quad \text{for } T < T_c
 $$
 
-Where $$( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 )$$.
+Where ( $$T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269$$ ).
 
 
 ## Steps of the simulation
@@ -110,7 +110,7 @@ $$
   M(T) = \left[1 - \frac{1}{\sinh^4\left(\frac{2J}{k_B T}\right)}\right]^{\frac{1}{8}}, \quad \text{for } T < T_c
   $$
 
-Where $$( T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269 )$$ is the theoretical Curie temperature for the 2D Ising model (Onsager's solution).
+Where ( $$T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269$$ ) is the theoretical Curie temperature for the 2D Ising model (Onsager's solution).
 
 📁 Output folder: `snapshots/`
 📈 Plots:
@@ -174,7 +174,7 @@ This script is stored in:
 
   ## 📚 Physical Background
 
-  The freely-jointed chain models a polymer as $$( N )$$ rigid segments of length $$( b )$$, randomly oriented in 3D. The end-to-end vector is:
+  The freely-jointed chain models a polymer as ( $$N$$ ) rigid segments of length ( $$b$$ ), randomly oriented in 3D. The end-to-end vector is:
 
 $$
 \vec{Q} = \sum_{i=1}^{N} \vec{b}_i
@@ -253,22 +253,22 @@ $$
 D = \frac{\text{slope}}{2d}
 $$
 
-with $$( d = 2 )$$ the dimensionality of the system.
+with ( $$d = 2$$ ) the dimensionality of the system.
 
 ### Mathematical Definitions
 
 - Let $$((X_t^i, Y_t^i))$$ be the position of walker $$(i)$$ at time $$(t)$$
 - For a given walker, the MSD at lag \(\tau\) is computed as:
 
-  $$
-  \text{MSD}(\tau) = \frac{1}{T - \tau} \sum_{t=1}^{T - \tau} \left[ (X_{t+\tau} - X_t)^2 + (Y_{t+\tau} - Y_t)^2 \right]
-  $$
+  
+  $$\text{MSD}(\tau) = \frac{1}{T - \tau} \sum_{t=1}^{T - \tau} \left[ (X_{t+\tau} - X_t)^2 + (Y_{t+\tau} - Y_t)^2 \right]$$
+  
 
 - A linear fit is applied to the MSD for small τ values, and the diffusion coefficient is extracted via:
 
-  $$
-  D = \frac{\text{slope}}{2d}
-  $$
+  
+  $$D = \frac{\text{slope}}{2d}$$
+  
 
   where $$(d = 2)$$ is the dimension of the motion.
 
