@@ -35,6 +35,11 @@ This repository contains several physics simulations implemented in **MATLAB, Py
    - Theoretical M(T) curve
    - 3D spin arrow visualization
   
+ ### File location
+
+This script is stored in:  
+`physics_scripts/python/ising_model.py`
+  
 ### ❄️ clusters.py
 
 A 2D Ising model simulation at low temperature (`kBT = 1`) using the Metropolis algorithm. Spins are initialized randomly, and clusters emerge over time as the system minimizes energy. Snapshots are saved every 10,000 iterations to visualize cluster formation. Also includes theoretical magnetization comparison vs. temperature.
@@ -44,6 +49,11 @@ A 2D Ising model simulation at low temperature (`kBT = 1`) using the Metropolis 
 - Real-time spin evolution
 - Time evolution of magnetization
 - Theoretical magnetization curve (Onsager solution)
+
+  ### File location
+
+This script is stored in:  
+`physics_scripts/python/cluster.py`
   
 ---
 
@@ -74,6 +84,11 @@ Useful for:
 - Polymer physics and molecular simulations
 - Monte Carlo methods and conformational sampling
 - Developing statistical mechanics intuition
+
+  ### File location
+
+This script is stored in:  
+`physics_scripts/c/polymer_chain.c`
 
 ---
 
@@ -113,6 +128,46 @@ Applicable in:
 - Statistical modeling
 - Quantitative finance (random walk hypotheses)
 - Physics education and numerical methods
+
+ ### File location
+
+This script is stored in:  
+`physics_scripts/matlab/brownian_motion/brownian_motion.m`
+
+## Constrained 2D Brownian Motion (MATLAB)
+
+This script simulates a 2D Brownian motion with a constraint: the walker cannot move in the same direction in two consecutive steps. This adds memory to the process, breaking the Markovian assumption and introducing nontrivial correlations.
+
+### Features
+
+- **N = 3** walkers
+- **T = 500** time steps
+- 4 possible directions (up, down, left, right), chosen randomly but **not allowed to repeat immediately**
+- Real-time visualization of trajectories
+- Computation of the Mean Squared Displacement (MSD) for increasing lag τ
+- Linear fit on MSD for small τ to estimate the diffusion coefficient
+
+### Mathematical Definitions
+
+- Let \((X_t^i, Y_t^i)\) be the position of walker \(i\) at time \(t\)
+- For a given walker, the MSD at lag \(\tau\) is computed as:
+
+  $$
+  \text{MSD}(\tau) = \frac{1}{T - \tau} \sum_{t=1}^{T - \tau} \left[ (X_{t+\tau} - X_t)^2 + (Y_{t+\tau} - Y_t)^2 \right]
+  $$
+
+- A linear fit is applied to the MSD for small τ values, and the diffusion coefficient is extracted via:
+
+  $$
+  D = \frac{\text{slope}}{2d}
+  $$
+
+  where \(d = 2\) is the dimension of the motion.
+
+### File location
+
+This script is stored in:  
+`physics_scripts/matlab/brownian_motion/Constrain.m`
   
 ---
 
@@ -129,6 +184,11 @@ Applicable in:
 - Lattice generation with two atoms per cell
 - Lennard-Jones potential with 12-6 parameters
 - Z-scan above selected adsorption sites
+
+ ### File location
+
+This script is stored in:  
+`physics_scripts/cpp/cohesion_energy.cpp`
 
 ---
 
