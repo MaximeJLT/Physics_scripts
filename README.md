@@ -42,6 +42,29 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 - Computes distance distributions and diffusion properties.
 - **Why C?** Lightweight, fast, and perfectly suited for simple random walk mechanics and efficient memory control.
 
+- ## Features
+
+- Random generation of 3D segment vectors within a sphere of radius `b`
+- Generation of `T` independent polymer conformations
+- Calculation of the end-to-end distance for each conformation
+- Export to `.xyz` file for visualization in VMD or PyMOL
+- Histogram of end-to-end distances
+
+## Output
+
+- `polymere.xyz`: All conformations for visualization
+- Printed:
+  - Average end-to-end distance ⟨Q²⟩
+  - Theoretical value for comparison
+  - Histogram of `Q` over `T` conformations
+
+## Applications
+
+Useful for:
+- Polymer physics and molecular simulations
+- Monte Carlo methods and conformational sampling
+- Developing statistical mechanics intuition
+
 ---
 
 ### 3. 🟢 **Brownian Motion** in 2D (MATLAB)
