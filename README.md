@@ -106,9 +106,9 @@ $$
 
 - Theoretical magnetization \( M(T) \) (Onsager's solution):
 
-  $$
-  M(T) = \left[1 - \frac{1}{\sinh^4\left(\frac{2J}{k_B T}\right)}\right]^{\frac{1}{8}}, \quad \text{for } T < T_c
-  $$
+  
+  $$M(T) = \left[1 - \frac{1}{\sinh^4\left(\frac{2J}{k_B T}\right)}\right]^{\frac{1}{8}}, \quad \text{for } T < T_c$$
+  
 
 Where ( $$T_c = \frac{2J}{\ln(1+\sqrt{2})} \approx 2.269$$ ) is the theoretical Curie temperature for the 2D Ising model (Onsager's solution).
 
