@@ -11,7 +11,29 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 - Visualizes magnetization and critical behavior across temperatures.
 - **Why Python?** Ideal for stochastic modeling, data visualization, and quantitative finance (e.g., option pricing, Gibbs sampling).
 
-📁 Folder: `ising_model/python/ising_model.py`
+- It computes:
+- Magnetization as a function of time
+- Magnetic susceptibility as a function of temperature
+- Theoretical magnetization curve
+- 2D and 3D visualizations of the spin configuration
+
+## Steps of the simulation
+
+1. **Lattice creation**: A (2N + 1)² grid with periodic boundary conditions
+2. **Initialization**: All spins set to +1 (up state)
+3. **Monte Carlo loop**:
+   - Randomly select a spin
+   - Compute ΔE with nearest neighbors
+   - Flip spin based on Metropolis acceptance rule
+4. **Observables**:
+   - Magnetization (M)
+   - Magnetic susceptibility (χ)
+5. **Plots**:
+   - χ vs k_BT
+   - Magnetization over time
+   - Final 2D spin configuration
+   - Theoretical M(T) curve
+   - 3D spin arrow visualization
 
 ---
 
@@ -20,8 +42,6 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 - Computes distance distributions and diffusion properties.
 - **Why C?** Lightweight, fast, and perfectly suited for simple random walk mechanics and efficient memory control.
 
-📁 Folder: `polymer_chain/c/polymer_chain.c`
-
 ---
 
 ### 3. 🟢 **Brownian Motion** in 2D (MATLAB)
@@ -29,16 +49,12 @@ This repository contains several physics simulations implemented in **MATLAB, Py
 - Calculates probability distributions and mean square displacement over time.
 - **Why MATLAB?** Excellent for matrix operations and scientific visualization; ideal for clear plots and quick prototyping.
 
-📁 Folder: `brownian_motion/matlab/brownian_motion.m`
-
 ---
 
 ### 4. 🧱 Cohesive Energy – **Crystal Structure & Potentials** (C++)
 - Calculates the Lennard-Jones potential between an atom and a graphene sheet.
 - Extracts equilibrium distance and energy profile over surface sites.
 - **Why C++?** Best suited for multi-layered numerical computation with structured data and optimization loops. Relevant to R&D and molecular modeling.
-
-📁 Folder: `crystal_cohesion/cpp/crystal_energy.cpp`
 
 ---
 
